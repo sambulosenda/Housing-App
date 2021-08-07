@@ -10,12 +10,7 @@ function Footer() {
               <p>Airbnb 2021</p>
               <p>Investors</p>
               <p>Airbnb Plus</p>
-              <p>Airbnb Luxe</p>
-              <p>HotelTonight</p>
-              <p>Airbnb for Work</p>
-              <p>Made possible by Hosts</p>
-              <p>Careers</p>
-              <p>Founders' Letter</p>
+            
             </div>
   
             <div className="space-y-4 text-xs text-gray-800">
@@ -25,7 +20,6 @@ function Footer() {
               <p>Airbnb Associates</p>
               <p>Frontline Stays</p>
               <p>Guest Referrals</p>
-              <p>Airbnb.org</p>
             </div>
   
             <div className="space-y-4 text-xs text-gray-800">
@@ -35,7 +29,6 @@ function Footer() {
               <p>Host an Experience</p>
               <p>Responsible hosting</p>
               <p>Resource Centre</p>
-              <p>Community Centre</p>
             </div>
   
             <div className="space-y-4 text-xs text-gray-800">

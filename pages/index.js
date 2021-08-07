@@ -14,7 +14,7 @@ export default function Home({exploreData}) {
       <Header />
       <Banner />
 
-      <main className="max-w-7xl max-auto px-8 sm:px-16">
+      <main className="max-w-7xl mx-auto px-8 sm:px-16">
         <section className="pt-6">
         <h2 className="text-4xl font-semibold pd-5">Explore nearby places</h2>
 
