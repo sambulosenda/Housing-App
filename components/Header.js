@@ -15,6 +15,7 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 import { useRouter } from "next/dist/client/router";
+import NumberInput from "./NumberInput";
 
 function Header() {
   const [searchInput, setSearchInput] = useState("");
@@ -83,6 +84,10 @@ const search = () => {
 
       {searchInput && (
         <div className="flex flex-col col-span-3 mx-auto mt-10">
+
+<h4 className="m-6" >
+          Pick Check-in & Check-out dates
+        </h4>
           <DateRangePicker
             ranges={[selectionRage]}
             minDate={new Date()}
@@ -96,6 +101,9 @@ const search = () => {
                 <input type="number" className="w-12 pl-2 text-lg outline-none " />
            </div>
 
+<div>
+    <NumberInput />
+</div>
 
          <div className="flex">
              <button onClick={search} className="flex-grow bg-red-500 rounded-lg p-2 text-white font-semibold">Search</button>
