@@ -21,13 +21,12 @@ function Header() {
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const router  = useRouter()
+  const router = useRouter();
 
-
-const handleSelect = (ranges) => {
+  const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
-};
+  };
 
   const selectionRage = {
     startDate: startDate,
@@ -35,17 +34,16 @@ const handleSelect = (ranges) => {
     key: "selection",
   };
 
-const search = () => {
+  const search = () => {
     router.push({
-        pathname: "/search", 
-        query: {
-            location: searchInput,
-            startDate: startDate.toISOString(),
-            endDate: endDate.toISOString(),
-        },
+      pathname: "/search",
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+      },
     });
-};
-
+  };
 
   return (
     <header
@@ -53,10 +51,10 @@ const search = () => {
         bg-white shadow-md  p-5 md:px-10"
     >
       {/*left*/}
-
-      <div 
-      onClick={() => router.push("/")}
-      className="relative flex items-center h-10 w-30 cursor-pointer my-auto ">
+      <div
+        onClick={() => router.push("/")}
+        className="relative flex items-center h-10 w-30 cursor-pointer my-auto "
+      >
         <Image src={logo} width={140} height={35} />
       </div>
 
@@ -84,30 +82,34 @@ const search = () => {
 
       {searchInput && (
         <div className="flex flex-col col-span-3 mx-auto mt-10">
-
-<h4 className="m-6" >
-          Pick Check-in & Check-out dates
-        </h4>
+          <h4 className="m-6">Pick Check-in & Check-out dates</h4>
           <DateRangePicker
             ranges={[selectionRage]}
             minDate={new Date()}
             rangeColors={["#FD5B61"]}
             onChange={handleSelect}
-            />
+          />
 
-            <div className="flex items-center bottom-5 mb-4">
-                <h2 className="flex-grow text-2xl font-semibold">Number of Guests</h2>
-                <UserIcon className="h-5"/>
-                <input type="number" className="w-12 pl-2 text-lg outline-none " />
-           </div>
+          <div className="flex items-center bottom-5 mb-4">
+            <h2 className="flex-grow text-2xl font-semibold">
+              Number of Guests
+            </h2>
+            <UserIcon className="h-5" />
+            <input type="number" className="w-12 pl-2 text-lg outline-none " />
+          </div>
 
-<div>
-    <NumberInput />
-</div>
+          <div>
+            <NumberInput />
+          </div>
 
-         <div className="flex">
-             <button onClick={search} className="flex-grow bg-red-500 rounded-lg p-2 text-white font-semibold">Search</button>
-         </div>
+          <div className="flex">
+            <button
+              onClick={search}
+              className="flex-grow bg-red-500 rounded-lg p-2 text-white font-semibold"
+            >
+              Search
+            </button>
+          </div>
         </div>
       )}
     </header>

@@ -18,7 +18,6 @@ function Map() {
         {...viewPort}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
         >
-
         </ReactMapGL>
     )
 }
